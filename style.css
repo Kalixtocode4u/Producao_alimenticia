@@ -1,0 +1,197 @@
+
+html{
+    background: linear-gradient(160deg, rgb(255, 0, 170), 10%, rgb(255, 196, 0), 90%, rgb(255, 0, 170));
+}
+body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+*{
+    text-transform: uppercase;
+}
+
+.corpo_form{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.form_box{
+    border: 1px solid #fff;
+    padding: 15pt;
+    border-radius: 15pt;
+    max-width: 250pt;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+}
+
+input[type=text], input[type=number]{
+    background-color: rgb(0, 0, 0, .0);
+    border: none;
+    border-bottom: 1px solid #fff;
+    
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+  
+/* cabeçalho */
+header{
+    margin: 10px;
+    padding: 20px;
+    display: block;
+}
+
+.titulo{
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    font-size: 35pt;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    max-width: fit-content;
+    margin: auto;
+    
+}
+
+.btt2{
+    padding: 6px;
+    margin: auto;
+    border: 2px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    display: block;
+    text-align: center;
+    max-width: fit-content;
+}
+
+.div_header{
+    display: flex;
+}
+
+/* conteudo principal*/
+.conteiner{
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    border-top: 1px solid #fff;
+}
+
+/* painel de opções de ingredientes*/
+
+.titulo2{
+    margin: 10px 0px 0px 0px;
+    font-family: 'Courier New';
+}
+
+.Prod_painel{
+    width: 710px;
+    height: 490px;
+    margin: auto;
+    border-right: 1px solid #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cheq{
+    display: inline-block;
+    margin: 1px;
+}
+
+.bloco{
+    min-width: 70px;
+    max-width: 90px;
+    min-height: 70px;
+    max-height: 90px;
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.4) inset, -3px -3px 8px rgba(170, 170, 170, 0.4) inset;
+}
+
+.cheq input{ /*10*/
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.bloco > img{ /*10*/
+    margin: 15%;
+    width: 50px;
+    image-rendering: pixelated;
+}
+
+.cheq input:checked ~ .bloco{ /*10*/
+    box-shadow: 3px 3px 8px rgba(170, 170, 170, 0.4) inset, -3px -3px 8px rgba(190, 190, 190, 0.4) inset;
+}
+
+/* tabela */
+
+#Resultado{
+    margin: auto;
+    text-align: center;
+}
+
+.Prod_Alimentos{/*10*/
+    height: 480px;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+caption{/*10*/
+    font-size: 20px;
+    margin: 5px 0px 0px 0px;
+    padding: 15px 0px 0px 0px;
+    border-radius: 35px 0px 0px 0px;
+    border-top: 13px outset rgb(221, 0, 0, .5);
+    border-left: 13px outset rgb(221, 0, 0, .5);
+    border-right: 13px outset rgb(221, 0, 0, .5);
+}
+
+table{
+    width: 100%;
+    margin: auto;
+    border-bottom: 13px outset rgb(221, 0, 0, .5);
+    border-left: 13px outset rgb(221, 0, 0, .5);
+    border-right: 13px outset rgb(221, 0, 0, .5);
+}
+
+caption > div{
+    text-decoration: underline;
+    display: inline-flex;
+    align-self: last baseline;
+    width: 100%;
+}
+
+caption > div > img{
+    width: 100px;
+    background-color: rgba(77, 77, 77, 0.2);
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    image-rendering: pixelated;
+}
+
+td{/*10*/
+    text-align: center;
+}
+tr{/*10*/
+    text-align: center;
+}
+
