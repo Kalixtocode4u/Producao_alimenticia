@@ -14,29 +14,46 @@ require_once("conexao.php");
         <h2 class="titulo">Opcões</h2><br>
     </header>
 
-    <a class="simpleBttn" href="index.php">Home</a>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+    <main>
+    <div class="painel_links">
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="index.php">Painel de Alimentos</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="cadastrarAlimento.php">cadastrar Alimento</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="cadastrarReceita.php">cadastrar Receita</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="listarAlimentos.php">listar Alimentos</a>
+            <div class="fill_box"></div>
+            <p class="simpleBttn title_painel">teste Alimentos</p>
+            <div class="fill_box"></div>
+        </div>
 
-        <label>ingredientes</label><br>
-        
-        <?php
-            $consulta1 = "SELECT id,item FROM ingredientes;";
-            $fazConsuta1 = mysqli_query($conexao,$consulta1);
-
-            if(mysqli_num_rows($fazConsuta1) != 0){
-                foreach($fazConsuta1 as $ingrediente){
-                    echo "<input type='checkbox' name='escolha[]' value='$ingrediente[id]'>$ingrediente[item]";
-
-                    if($ingrediente['id']%3 == 0){
-                        echo "<br>";
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+    
+            <label>ingredientes</label><br>
+            
+            <?php
+                $consulta1 = "SELECT id,item FROM ingredientes;";
+                $fazConsuta1 = mysqli_query($conexao,$consulta1);
+    
+                if(mysqli_num_rows($fazConsuta1) != 0){
+                    foreach($fazConsuta1 as $ingrediente){
+                        echo "<input type='checkbox' name='escolha[]' value='$ingrediente[id]'>$ingrediente[item]";
+    
+                        if($ingrediente['id']%3 == 0){
+                            echo "<br>";
+                        }
                     }
-                }
-            } 
-        ?>
-
-        <br>
-        <button type="submit" name="submit">Show</button>
-    </form>
+                } 
+            ?>
+    
+            <br>
+            <button type="submit" name="submit">Show</button>
+        </form>
+    </main>
 
     <?php
         if(isset($_POST["submit"])){

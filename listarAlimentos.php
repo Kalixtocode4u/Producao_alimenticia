@@ -13,26 +13,44 @@ require_once("conexao.php");
     <header>
         <h2 class="titulo">Alimentos lista</h2>
     </header>
-    <a class="simpleBttn" href="index.php">Home</a>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+    
+    <main>
+    <div class="painel_links">
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="index.php">Painel de Alimentos</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="cadastrarAlimento.php">cadastrar Alimento</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="cadastrarReceita.php">cadastrar Receita</a>
+            <div class="fill_box"></div>
+            <p class="simpleBttn title_painel">listar Alimentos</p>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="testeAlimentos.php">teste Alimentos</a>
+            <div class="fill_box"></div>
+        </div>
 
-        <label for="">alimento</label><br>
-        <select name="alimento" id="">
-        
-        <?php
-            $consulta1 = "SELECT id,nome FROM prato;";
-            $fazConsuta1 = mysqli_query($conexao,$consulta1);
-
-            if(mysqli_num_rows($fazConsuta1) != 0){
-                foreach($fazConsuta1 as $prato){
-        ?>
-            <option value="<?= $prato["id"]; ?>"><?= $prato["nome"]; ?></option>
-        <?php }} ?>
-
-        </select><br>
-        <br>
-        <button type="submit" name="submit">Show</button>
-    </form>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+    
+            <label for="">alimento</label><br>
+            <select name="alimento" id="">
+            
+            <?php
+                $consulta1 = "SELECT id,nome FROM prato;";
+                $fazConsuta1 = mysqli_query($conexao,$consulta1);
+    
+                if(mysqli_num_rows($fazConsuta1) != 0){
+                    foreach($fazConsuta1 as $prato){
+            ?>
+                <option value="<?= $prato["id"]; ?>"><?= $prato["nome"]; ?></option>
+            <?php }} ?>
+    
+            </select><br>
+            <br>
+            <button type="submit" name="submit">Show</button>
+        </form>
+    </main>
 
     <table>
         <thead>

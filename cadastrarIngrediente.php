@@ -13,9 +13,23 @@ require_once("conexao.php");
     <header>
         <h2 class="titulo">cadastrar ingrediente</h2>
     </header>
-    <a class="simpleBttn" href="index.php">Home</a>
 
     <main class="corpo_form">
+    <div class="painel_links">
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="index.php">Painel de Alimentos</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="cadastrarAlimento.php">cadastrar Alimento</a>
+            <div class="fill_box"></div>
+            <p class="simpleBttn title_painel">cadastrar Ingrediente</p>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="cadastrarReceita.php">cadastrar Receita</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="listarAlimentos.php">listar Alimentos</a>
+            <div class="fill_box"></div>
+            <a class="simpleBttn headerBttn" href="testeAlimentos.php">teste Alimentos</a>
+            <div class="fill_box"></div>
+        </div>
         <div class="form_box">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
                 <label for="">nome</label><br>

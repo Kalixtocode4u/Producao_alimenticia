@@ -16,19 +16,19 @@ require("conexao.php")
     </header>
     <main>
         <div class="painel_links">
-            <span class="fill_box"></span>
+            <div class="fill_box"></div>
             <p class="simpleBttn title_painel">Painel de Alimentos</p>
-            <span class="fill_box"></span>
+            <div class="fill_box"></div>
             <a class="simpleBttn headerBttn" href="cadastrarAlimento.php">cadastrar Alimento</a>
-            <span class="fill_box"></span>
+            <div class="fill_box"></div>
             <a class="simpleBttn headerBttn" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
-            <span class="fill_box"></span>
+            <div class="fill_box"></div>
             <a class="simpleBttn headerBttn" href="cadastrarReceita.php">cadastrar Receita</a>
-            <span class="fill_box"></span>
+            <div class="fill_box"></div>
             <a class="simpleBttn headerBttn" href="listarAlimentos.php">listar Alimentos</a>
-            <span class="fill_box"></span>
+            <div class="fill_box"></div>
             <a class="simpleBttn headerBttn" href="testeAlimentos.php">teste Alimentos</a>
-            <span class="fill_box"></span>
+            <div class="fill_box"></div>
         </div>
         <div class="conteiner">
             <div class="Prod_painel">
