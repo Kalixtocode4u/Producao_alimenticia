@@ -7,10 +7,13 @@ require_once("conexao.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastrar alimetos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>cadastrar Receita</h2><br>
-    <a href="index.php">Home</a>
+    <header>
+        <h2 class="titulo">cadastrar Receita</h2>
+    </header>
+    <a class="simpleBttn" href="index.php">Home</a>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
 
         <label for="">alimento</label><br>

@@ -1,12 +1,10 @@
 
-html{
-    background: linear-gradient(160deg, rgb(255, 0, 170), 10%, rgb(255, 196, 0), 90%, rgb(255, 0, 170));
-}
 body{
     margin: 0px;
     width: 100%;
     height: 100%;
 }
+
 
 *{
     text-transform: uppercase;
@@ -48,9 +46,11 @@ input::-webkit-inner-spin-button {
   
 /* cabeçalho */
 header{
-    margin: 10px;
     padding: 20px;
+    padding-bottom: 0px;
     display: block;
+    /*background: linear-gradient(160deg, #f0a, 10%, #fc0, 90%, #f0a);*/
+    background-color: #ec6;
 }
 
 .titulo{
@@ -65,7 +65,7 @@ header{
     
 }
 
-.btt2{
+.simpleBttn{
     padding: 6px;
     margin: auto;
     border: 2px solid #000;
@@ -73,11 +73,29 @@ header{
     background-color: #fff;
     display: block;
     text-align: center;
-    max-width: fit-content;
+    min-width: fit-content;
 }
 
-.div_header{
+.headerBttn{
+    border-bottom: 2px solid #000;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.title_painel{
+    border-bottom: 2px solid #fff;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 32px 24px;
+}
+
+.painel_links{
     display: flex;
+    background-color: #ec6;
+}
+.fill_box{
+    width: 100%;
+    border-bottom: 2px solid #000;
 }
 
 /* conteudo principal*/
@@ -86,7 +104,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
-    border-top: 1px solid #fff;
+    border-top: 1px solid #000;
 }
 
 /* painel de opções de ingredientes*/
@@ -100,7 +118,7 @@ header{
     width: 710px;
     height: 490px;
     margin: auto;
-    border-right: 1px solid #fff;
+    border-right: 1px solid #000;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -157,18 +175,17 @@ caption{/*10*/
     font-size: 20px;
     margin: 5px 0px 0px 0px;
     padding: 15px 0px 0px 0px;
-    border-radius: 35px 0px 0px 0px;
-    border-top: 13px outset rgb(221, 0, 0, .5);
-    border-left: 13px outset rgb(221, 0, 0, .5);
-    border-right: 13px outset rgb(221, 0, 0, .5);
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
 }
 
 table{
     width: 100%;
     margin: auto;
-    border-bottom: 13px outset rgb(221, 0, 0, .5);
-    border-left: 13px outset rgb(221, 0, 0, .5);
-    border-right: 13px outset rgb(221, 0, 0, .5);
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
 }
 
 caption > div{

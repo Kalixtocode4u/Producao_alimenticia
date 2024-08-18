@@ -12,15 +12,15 @@ require_once("conexao.php");
 <body >
     <header>
         <h2 class="titulo">cadastrar Alimento</h2><br>
-        <a class="btt2" href="index.php">Home</a>
     </header>
+    <a class="simpleBttn" href="index.php">Home</a>
     <main class="corpo_form">
         <div class="form_box">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
                 <label for="">nome</label><br>
                 <input type="text" name="nome"><br>
                 <br>
-                <button class="btt2" type="submit" name="submit">cadastrar</button>
+                <button class="simpleBttn" type="submit" name="submit">cadastrar</button>
             </form>
         </div>
     </main>

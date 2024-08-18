@@ -10,8 +10,10 @@ require_once("conexao.php");
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2 class="titulo">cadastrar ingrediente</h2><br>
-    <a class="btt2" href="index.php">Home</a>
+    <header>
+        <h2 class="titulo">cadastrar ingrediente</h2>
+    </header>
+    <a class="simpleBttn" href="index.php">Home</a>
 
     <main class="corpo_form">
         <div class="form_box">
@@ -28,7 +30,7 @@ require_once("conexao.php");
                 <label for="">gordura</label><br>
                 <input type="number" name="gordura" step="0.1"><br>
                 <br>
-                <button class="btt2" type="submit" name="submit">cadastrar</button>
+                <button class="simpleBttn" type="submit" name="submit">cadastrar</button>
             </form>
         </div>
     </main>

@@ -13,15 +13,23 @@ require("conexao.php")
 <body>
     <header>
         <h1 class="titulo">Produção de Alimentos <i>1.4</i></h1>
-        <div class="div_header">
-            <a class="btt2" href="cadastrarAlimento.php">cadastrar Alimento</a>
-            <a class="btt2" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
-            <a class="btt2" href="cadastrarReceita.php">cadastrar Receita</a>
-            <a class="btt2" href="listarAlimentos.php">listar Alimentos</a>
-            <a class="btt2" href="testeAlimentos.php">teste Alimentos</a>
-        </div>
     </header>
     <main>
+        <div class="painel_links">
+            <span class="fill_box"></span>
+            <p class="simpleBttn title_painel">Painel de Alimentos</p>
+            <span class="fill_box"></span>
+            <a class="simpleBttn headerBttn" href="cadastrarAlimento.php">cadastrar Alimento</a>
+            <span class="fill_box"></span>
+            <a class="simpleBttn headerBttn" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
+            <span class="fill_box"></span>
+            <a class="simpleBttn headerBttn" href="cadastrarReceita.php">cadastrar Receita</a>
+            <span class="fill_box"></span>
+            <a class="simpleBttn headerBttn" href="listarAlimentos.php">listar Alimentos</a>
+            <span class="fill_box"></span>
+            <a class="simpleBttn headerBttn" href="testeAlimentos.php">teste Alimentos</a>
+            <span class="fill_box"></span>
+        </div>
         <div class="conteiner">
             <div class="Prod_painel">
                 <h2  class="titulo2">Opções de ingredientes</h2>
@@ -53,7 +61,7 @@ require("conexao.php")
                     <label class="cheq"><input type="checkbox" name="escolha[]" value="25"><div class="bloco"><img src="ingredientes/presunto.png"></div></label>
                     <label class="cheq"><input type="checkbox" name="escolha[]" value="26"><div class="bloco"><img src="ingredientes/morango.png"></div></label>
                     
-                    <button class="btt2" type="submit" name="submit"><b>Alimentos</b></button>
+                    <button class="simpleBttn" type="submit" name="submit"><b>Alimentos</b></button>
                 </form>
             </div>
             <div id="Resultado">
