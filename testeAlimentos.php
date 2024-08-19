@@ -11,7 +11,7 @@ require_once("conexao.php");
 </head>
 <body>
     <header>
-        <h2 class="titulo">Opcões</h2><br>
+        <h2 class="titulo">Opcões</h2>
     </header>
 
     <main>
@@ -31,69 +31,74 @@ require_once("conexao.php");
             <div class="fill_box"></div>
         </div>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
-    
-            <label>ingredientes</label><br>
-            
-            <?php
-                $consulta1 = "SELECT id,item FROM ingredientes;";
-                $fazConsuta1 = mysqli_query($conexao,$consulta1);
-    
-                if(mysqli_num_rows($fazConsuta1) != 0){
-                    foreach($fazConsuta1 as $ingrediente){
-                        echo "<input type='checkbox' name='escolha[]' value='$ingrediente[id]'>$ingrediente[item]";
-    
-                        if($ingrediente['id']%3 == 0){
-                            echo "<br>";
-                        }
-                    }
-                } 
-            ?>
-    
-            <br>
-            <button type="submit" name="submit">Show</button>
-        </form>
-    </main>
-
-    <?php
-        if(isset($_POST["submit"])){
-
-            $escolhas = $_POST['escolha'];
+        <div class="form_box">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
         
-            
-            foreach ($escolhas as $escolha) {
+                <label>ingredientes</label><br>
+                
+                <?php
+                    $consulta1 = "SELECT id,item FROM ingredientes;";
+                    $fazConsuta1 = mysqli_query($conexao,$consulta1);
+        
+                    if(mysqli_num_rows($fazConsuta1) != 0){
+                        foreach($fazConsuta1 as $ingrediente){
+                            echo "<input type='checkbox' name='escolha[]' value='$ingrediente[id]'>$ingrediente[item]";
+        
+                            if($ingrediente['id']%3 == 0){
+                                echo "<br>";
+                            }
+                        }
+                    } 
+                ?>
+        
+                <br>
+                <button type="submit" name="submit">Show</button>
+            </form>
+            <div id="resultado">
+                <?php
+                    if(isset($_POST["submit"])){
+
+                        $escolhas = $_POST['escolha'];
                     
-                $consulta = "SELECT id_alimento, nome FROM receita
-                            INNER JOIN 
-                            prato ON prato.id = receita.id_alimento
-                            JOIN 
-                            ingredientes ON ingredientes.id = receita.id_ingrediente 
-                            where id_ingrediente=$escolha;";
-                $exeConsulta = mysqli_query($conexao, $consulta);
+                        
+                        foreach ($escolhas as $escolha) {
+                                
+                            $consulta = "SELECT id_alimento, nome FROM receita
+                                        INNER JOIN 
+                                        prato ON prato.id = receita.id_alimento
+                                        JOIN 
+                                        ingredientes ON ingredientes.id = receita.id_ingrediente 
+                                        where id_ingrediente=$escolha;";
+                            $exeConsulta = mysqli_query($conexao, $consulta);
 
-                if (mysqli_num_rows($exeConsulta) != 0) {
-                        foreach ($exeConsulta as $ingredientesEscolhidos) {
-                            echo "<h3>$ingredientesEscolhidos[nome]</h3>";
+                            if (mysqli_num_rows($exeConsulta) != 0) {
+                                    foreach ($exeConsulta as $ingredientesEscolhidos) {
+                                        echo "<h3>$ingredientesEscolhidos[nome]</h3>";
 
-                            $consultaB = "SELECT item FROM receita
-                                        INNER JOIN
-                                        ingredientes ON ingredientes.id = receita.id_ingrediente
-                                        where id_alimento = $ingredientesEscolhidos[id_alimento];";
-                            
-                            $exeConsultaB = mysqli_query($conexao, $consultaB);
+                                        $consultaB = "SELECT item FROM receita
+                                                    INNER JOIN
+                                                    ingredientes ON ingredientes.id = receita.id_ingrediente
+                                                    where id_alimento = $ingredientesEscolhidos[id_alimento];";
+                                        
+                                        $exeConsultaB = mysqli_query($conexao, $consultaB);
 
-                            if (mysqli_num_rows($exeConsultaB) != 0) {
-                                foreach ($exeConsultaB as $alimentosEscolhidos){
-                                    echo "<p>$alimentosEscolhidos[item]</p>";
+                                        if (mysqli_num_rows($exeConsultaB) != 0) {
+                                            foreach ($exeConsultaB as $alimentosEscolhidos){
+                                                echo "<p>$alimentosEscolhidos[item]</p>";
+                                            }
+                                        }
+
                                 }
                             }
-
+                    
+                        }
                     }
-                }
-         
-            }
-        }
-    ?>
+                ?>
+            </div>
+        </div>
+    </main>
+
+    
 </body>
 </html>
 <?php

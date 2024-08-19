@@ -1,35 +1,35 @@
-
-body{
-    margin: 0px;
-    width: 100%;
-    height: 100%;
-}
-
-
 *{
     text-transform: uppercase;
 }
 
+body{
+    margin: 0px;
+    width: 100%;
+    max-height: fit-content;
+}
+
 .corpo_form{
     width: 100%;
-    height: 100%;
-    
+    height: auto;
+    align-content: center;
 }
 
 .form_box{
-    border: 1px solid #fff;
+    border: 1px solid #000;
+    background-color: #fff;
     padding: 15pt;
     border-radius: 15pt;
     max-width: 250pt;
     margin: auto;
     justify-content: center;
     display: flex;
+    
 }
 
 input[type=text], input[type=number]{
     background-color: rgb(0, 0, 0, .0);
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000;
     
 }
 
@@ -76,33 +76,34 @@ header{
 }
 
 .headerBttn{
+    border-top-right-radius: 32px 24px;
     box-shadow: 0px -22px 3px -20px inset rgba(0, 0, 0, .50);
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
 }
 
 .title_painel{
-    border-bottom: 2px solid #fff;
+    /*border-bottom: 2px solid #fff;*/
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    border-top-right-radius: 32px 24px;
     box-shadow: 4px -3px 3px 0px rgba(0, 0, 0, .50);
+    border-top-right-radius: 32px 24px;
 }
 
 .painel_links{
     display: flex;
     background-color: #ec6;
-    box-shadow: 0px -22px 3px -20px inset rgba(0, 0, 0, .50);
 }
 .fill_box{
     width: 100%;
-    box-shadow: 0px -22px 3px -20px inset rgba(0, 0, 0, .50);
 }
 
 /* conteudo principal*/
 .conteiner{
     padding: 0px;
     display: flex;
+    /*align-items: center;*/
+    justify-content: center;
     flex-wrap: wrap;
     margin: 10px;
     border-top: 1px solid #000;
@@ -110,33 +111,36 @@ header{
 
 /* painel de opções de ingredientes*/
 
-.titulo2{
-    margin: 10px 0px 0px 0px;
+#simpletitulo{
+    margin: 0px;
     font-family: 'Courier New';
+    font-size: 20px;
 }
 
 .Prod_painel{
-    width: 710px;
-    height: 490px;
-    margin: auto;
+    max-width: 710px;
+    margin: 10px;
+    font-size: 0px;
+    max-height: 490px;
     border-right: 1px solid #000;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
 }
 
 .cheq{
     display: inline-block;
-    margin: 1px;
     border-bottom: 5px solid #fff;
+    min-width: 10px;
+    min-height: 10px;
 }
 
 .bloco{
-    min-width: 70px;
-    max-width: 90px;
-    min-height: 70px;
-    max-height: 90px;
+    min-width: fit-content;
+    min-height: fit-content;
+    padding: 5px;
     border-bottom: 5px double #fff;
     margin: 10px;
     /*box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.4) inset, -3px -3px 8px rgba(170, 170, 170, 0.4) inset;*/
@@ -151,7 +155,7 @@ header{
 }
 
 .bloco > img{ /*10*/
-    margin: 15%;
+    /*margin: 15%;*/
     width: 50px;
     image-rendering: pixelated;
 }
@@ -160,20 +164,22 @@ header{
     border-bottom: 5px solid #009;
 }
 
-.cheq input:checked ~ .bloco{ /*10*/
-    
+.cheq input:checked ~ .bloco{
     border-bottom: 5px double #090;
 }
 
-/* tabela */
+/* diplay da tabela de alimentos*/
 
 #Resultado{
-    margin: auto;
+    margin: 0px; /*auto;*/
     text-align: center;
+    background-color: #fff;
+    width: 395px;
+    margin: 10px;
 }
 
-.Prod_Alimentos{/*10*/
-    height: 480px;
+.tabelaAlimentos{
+    max-height: 433px;
     overflow: auto;
     scrollbar-width: none;
 }

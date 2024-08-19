@@ -6,12 +6,12 @@ require_once("conexao.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cadastrar alimetos</title>
+    <title>cadastrar alimentos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body >
     <header>
-        <h2 class="titulo">cadastrar Alimento</h2><br>
+        <h2 class="titulo">cadastrar Alimento</h2>
     </header>
 
     <main class="corpo_form">

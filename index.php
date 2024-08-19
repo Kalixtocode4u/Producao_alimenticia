@@ -32,7 +32,7 @@ require("conexao.php")
         </div>
         <div class="conteiner">
             <div class="Prod_painel">
-                <h2  class="titulo2">Opções de ingredientes</h2>
+                <h2 id="simpletitulo">Opções de ingredientes</h2>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
                     <label class="cheq"><input type="checkbox" name="escolha[]" value="1"><div class="bloco"><img src="ingredientes/trigo.png"></div></label>
                     <label class="cheq"><input type="checkbox" name="escolha[]" value="2"><div class="bloco"><img src="ingredientes/tomate.png"></div></label>
@@ -65,8 +65,8 @@ require("conexao.php")
                 </form>
             </div>
             <div id="Resultado">
-                <h2 class="titulo2">resultado de Alimentos</h2>
-                <div class="Prod_Alimentos">
+                <h2 id="simpletitulo">resultado de Alimentos</h2>
+                <div class="tabelaAlimentos">
                     <?php
                     if(isset($_POST["submit"])){
                     
