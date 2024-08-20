@@ -16,20 +16,20 @@ require_once("conexao.php");
     
     <main>
         <div class="painel_links">
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="index.php">Painel de Alimentos</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="cadastrarAlimento.php">cadastrar Alimento</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="cadastrarReceita.php">cadastrar Receita</a>
-            <div class="fill_box"></div>
-            <p class="simpleBttn title_painel">listar Alimentos</p>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="testeAlimentos.php">teste Alimentos</a>
-            <div class="fill_box"></div>
-        </div>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="index.php">Painel de Alimentos</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="cadastrarAlimento.php">cadastrar Alimento</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="cadastrarReceita.php">cadastrar Receita</a>
+            <div class="maxWidth sombraFicha"></div>
+            <p class="headerLabel sombraTitulo">listar Alimentos</p>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="testeAlimentos.php">teste Alimentos</a>
+            <div class="maxWidth sombraFicha"></div>
+        </div>    
 
         <div class="form_box">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">

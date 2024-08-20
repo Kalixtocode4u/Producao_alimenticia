@@ -15,27 +15,27 @@ require_once("conexao.php");
     </header>
 
     <main class="corpo_form">
-    <div class="painel_links">
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="index.php">Painel de Alimentos</a>
-            <div class="fill_box"></div>
-            <p class="simpleBttn title_painel">cadastrar Alimento</p>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="cadastrarReceita.php">cadastrar Receita</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="listarAlimentos.php">listar Alimentos</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="testeAlimentos.php">teste Alimentos</a>
-            <div class="fill_box"></div>
+        <div class="painel_links">
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="index.php">Painel de Alimentos</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraTitulo">cadastrar Alimento</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="cadastrarReceita.php">cadastrar Receita</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="listarAlimentos.php">listar Alimentos</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="testeAlimentos.php">teste Alimentos</a>
+            <div class="maxWidth sombraFicha"></div>
         </div>
         <div class="form_box">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
                 <label for="">nome</label><br>
                 <input type="text" name="nome"><br>
                 <br>
-                <button class="simpleBttn" type="submit" name="submit">cadastrar</button>
+                <button class="simpleLabel" type="submit" name="submit">cadastrar</button>
             </form>
         </div>
     </main>

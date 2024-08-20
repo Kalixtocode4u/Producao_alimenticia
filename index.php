@@ -16,19 +16,19 @@ require("conexao.php")
     </header>
     <main>
         <div class="painel_links">
-            <div class="fill_box"></div>
-            <p class="simpleBttn title_painel">Painel de Alimentos</p>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="cadastrarAlimento.php">cadastrar Alimento</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="cadastrarReceita.php">cadastrar Receita</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="listarAlimentos.php">listar Alimentos</a>
-            <div class="fill_box"></div>
-            <a class="simpleBttn headerBttn" href="testeAlimentos.php">teste Alimentos</a>
-            <div class="fill_box"></div>
+            <div class="maxWidth sombraFicha"></div>
+            <p class="headerLabel sombraTitulo">Painel de Alimentos</p>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="cadastrarAlimento.php">cadastrar Alimento</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="cadastrarReceita.php">cadastrar Receita</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="listarAlimentos.php">listar Alimentos</a>
+            <div class="maxWidth sombraFicha"></div>
+            <a class="headerLabel sombraFicha" href="testeAlimentos.php">teste Alimentos</a>
+            <div class="maxWidth sombraFicha"></div>
         </div>
         <div class="conteiner">
             <div class="Prod_painel">
@@ -61,7 +61,7 @@ require("conexao.php")
                     <label class="cheq"><input type="checkbox" name="escolha[]" value="25"><div class="bloco"><img src="ingredientes/presunto.png"></div></label>
                     <label class="cheq"><input type="checkbox" name="escolha[]" value="26"><div class="bloco"><img src="ingredientes/morango.png"></div></label>
                     
-                    <button class="simpleBttn" type="submit" name="submit"><b>Alimentos</b></button>
+                    <button class="simpleLabel" type="submit" name="submit"><b>Alimentos</b></button>
                 </form>
             </div>
             <div id="Resultado">
@@ -89,7 +89,7 @@ require("conexao.php")
                 <table>
                     <?php 
                         
-                        echo "<caption><div><img src='alimento/$alimentosEscolhido[nome].png'>$alimentosEscolhido[nome]</div></caption>"; 
+                        echo "<caption><div><img src='alimento/$alimentosEscolhido[nome].png'><p>$alimentosEscolhido[nome]</p></div></caption>"; 
                     ?>
 
                             <thead>
