@@ -3,6 +3,13 @@
     font-size: 16px;
 }
 
+.lemonada-<uniquifier> {
+  font-family: "Lemonada", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
 body{
     margin: 0px;
     width: 100%;
@@ -50,7 +57,7 @@ header{
 }
 
 .titulo{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Lemonada';
     text-transform: capitalize;
     font-size: 35pt;
     color: #fff;
