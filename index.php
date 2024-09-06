@@ -9,9 +9,11 @@ require("conexao.php")
     <title>Produção alimenticia</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="#">
+    <!--
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poetsen+One&display=swap');
     </style>
+    -->
 </head>
 <body>
     <header>
@@ -29,8 +31,6 @@ require("conexao.php")
             <a class="headerLabel sombraFicha" href="cadastrarReceita.php">cadastrar Receita</a>
             <div class="maxWidth sombraFicha"></div>
             <a class="headerLabel sombraFicha" href="listarAlimentos.php">listar Alimentos</a>
-            <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="testeAlimentos.php">teste Alimentos</a>
             <div class="maxWidth sombraFicha"></div>
         </div>
         <div class="conteiner">

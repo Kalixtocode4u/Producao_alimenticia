@@ -26,8 +26,6 @@ require_once("conexao.php");
             <div class="maxWidth sombraFicha"></div>
             <a class="headerLabel sombraFicha" href="listarAlimentos.php">listar Alimentos</a>
             <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="testeAlimentos.php">teste Alimentos</a>
-            <div class="maxWidth sombraFicha"></div>
         </div>
         <div class="form_box">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
