@@ -1,6 +1,5 @@
 <?php
 require_once("conexao.php");
-
 ?>
 <html lang="pt-BR">
 <head>
@@ -15,26 +14,28 @@ require_once("conexao.php");
     </header>
     <main>
         <div class="painel_links">
-            <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="index.php">Painel de Alimentos</a>
-            <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="cadastrarAlimento.php">cadastrar Alimento</a>
-            <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
-            <div class="maxWidth sombraFicha"></div>
-            <p class="headerLabel sombraTitulo">cadastrar Receita</p>
-            <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="listarAlimentos.php">listar Alimentos</a>
-            <div class="maxWidth sombraFicha"></div>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="index.php">Painel de Alimentos</a>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="cadastrarAlimento.php">cadastrar Alimento</a>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombraTitulo">cadastrar Receita</a>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="listarAlimentos.php">listar Alimentos</a>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="listarIngrediete.php" >listar Ingrediente</a>
+            <div class="maxWidth sombra"></div>
         </div>
-        <div class="form_box">
+        <div class="formulario">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
         
                 <label for="">alimento</label><br>
-                <select name="alimento" id="">
+                <select name="alimento">
                 
                 <?php
-                    $consulta1 = "SELECT id,nome FROM prato;";
+                    $consulta1 = "SELECT id,nome FROM pratos;";
                     $fazConsuta1 = mysqli_query($conexao,$consulta1);
         
                     if(mysqli_num_rows($fazConsuta1) != 0){

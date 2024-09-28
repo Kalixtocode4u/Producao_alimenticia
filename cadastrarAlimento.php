@@ -16,22 +16,27 @@ require_once("conexao.php");
 
     <main class="corpo_form">
         <div class="painel_links">
-            <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="index.php">Painel de Alimentos</a>
-            <div class="maxWidth sombraFicha"></div>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="index.php">Painel de Alimentos</a>
+            <div class="maxWidth sombra"></div>
             <a class="headerLabel sombraTitulo">cadastrar Alimento</a>
-            <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
-            <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="cadastrarReceita.php">cadastrar Receita</a>
-            <div class="maxWidth sombraFicha"></div>
-            <a class="headerLabel sombraFicha" href="listarAlimentos.php">listar Alimentos</a>
-            <div class="maxWidth sombraFicha"></div>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="cadastrarReceita.php">cadastrar Receita</a>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="listarAlimentos.php">listar Alimentos</a>
+            <div class="maxWidth sombra"></div>
+            <a class="headerLabel sombra" href="listarIngrediete.php" >listar Ingrediente</a>
+            <div class="maxWidth sombra"></div>
         </div>
-        <div class="form_box">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+        <div class="formulario">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" enctype="multipart/form-data">
                 <label for="">nome</label><br>
-                <input type="text" name="nome"><br>
+                ►<input type="text" name="nome"><br>
+                <br>
+                <label>Selecione uma imagem</label><br>
+                <input type="file" name="imagem" accept="image/*"><br>
                 <br>
                 <button class="simpleLabel" type="submit" name="submit">cadastrar</button>
             </form>
@@ -42,11 +47,16 @@ require_once("conexao.php");
 <?php
 
 $nome = "";
+$src = "";
+
+if(isset($_FILES["imagem"]) && !empty($_FILES["imagem"])){
+    $src = "ingredientes/".$_FILES["imagem"]["name"];
+}
 
 if(isset($_POST['submit'])){
     $nome = $_POST['nome'];
     
-    $inserir = "INSERT INTO prato(nome) VALUES('$nome');";
+    $inserir = "INSERT INTO pratos(nome, src_prato) VALUES('$nome', '$src');";
     
     $operacao = mysqli_query($conexao,$inserir);
     

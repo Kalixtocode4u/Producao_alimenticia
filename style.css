@@ -5,30 +5,18 @@
     font-size: 16px;
 }
 
+/*<label class="cheq"><input type="checkbox" name="escolha[]" value="<?= $ingredintes['id']; ?>"><div class="bloco"><img src="<?= $ingredintes['id']; ?>"></div></label>*/
+
 body{
     margin: 0px;
     width: 100%;
     max-height: fit-content;
 }
 
-.corpo_form{
-    width: 100%;
-    align-content: center;
-}
-
-.form_box{
-    display: flex;
-    padding: 15pt;
-    max-width: 250pt;
-    margin: auto;
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 15pt;
-    justify-content: center;
-}
-
+/*inputs para cada browser*/
 input[type=text], input[type=number]{
     background-color: rgb(0, 0, 0, .0);
+    border: none;
     border-bottom: 1px solid #000;
 }
 
@@ -45,48 +33,41 @@ input::-webkit-inner-spin-button {
   
 /* cabeçalho */
 header{
-    padding: 20px;
-    padding-bottom: 0px;
-    display: block;
     background-color: #ec6;
+    display: grid;
+    place-items: center;
+    max-height: min-content;
 }
 
-.titulo{
+.titulo{/*consertado*/
     font-family: 'Lemonada';
-    text-transform: capitalize;
     font-size: 35pt;
     color: #fff;
     font-weight: bold;
-    display: flex;
     max-width: fit-content;
-    margin: auto;
-    
 }
 
-.headerLabel{
-    padding: 6px;
-    margin: auto;
-    border-radius: 5px;
-    background-color: #fff;
-    display: block;
-    text-align: center;
+/*main*/
+.painel_links{
+    display: flex;
+    background-color: #ec6;
+}
+
+.headerLabel{/*consertado*/
     min-width: fit-content;
+    background-color: #fff;
+    padding: 6px 20px 6px 6px;
+    border-top-left-radius: 5px;
     border-top-right-radius: 32px 24px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
     font-family: Arial;
     color: #000;
     text-decoration: none;
 }
 
-.sombraFicha{box-shadow: 0px -22px 3px -20px inset rgba(0, 0, 0, .50);}
+.sombra{box-shadow: 0px -22px 3px -20px inset rgba(0, 0, 0, .50);}
 
 .sombraTitulo{box-shadow: 4px -3px 3px 0px rgba(0, 0, 0, .50);}
 
-.painel_links{
-    display: flex;
-    background-color: #ec6;
-}
 
 .maxWidth{width: 100%;}
 
@@ -96,11 +77,9 @@ header{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 10px;
-    border-top: 1px solid #000;
 }
 
-/* painel de opções de ingredientes*/
+/*painel de opções de ingredientes*/
 
 #simpletitulo{
     margin: 0px;
@@ -111,7 +90,7 @@ header{
 .Prod_painel{
     max-width: 710px;
     margin: 10px;
-    font-size: 0px;
+    /*font-size: 0px;*/
     max-height: 490px;
     border-right: 1px solid #000;
     display: flex;
@@ -166,8 +145,21 @@ header{
     margin: 10px;
 }
 
+.formulario{
+    padding: 15pt;
+    max-width: fit-content;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 15pt;
+}
+
+form{
+    font-size: 0px;
+}
+
 .tabelaAlimentos{
-    max-height: 433px;
+    max-height: fit-content;
     overflow: auto;
     scrollbar-width: none;
 }
