@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabeçalho{
+    text-align: center;
+    background-color: gold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.titulo{
+    font-family: 'Lemonada';
+    font-size: 4vw;
+    font-weight: bold;
+}
+
+.titulo i{
+    font-size: 16px;
+}
+
+.circulo{
+    display: block;
+    background-color: chartreuse;
+    border-radius: 100px;
+    width: 60px;
+    height: 60px;
+}
+
+.navergação{
+    display: flex;
+    justify-content: space-around;
+}
+
+.conteiner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 30px;
+}
+
+.conteudo{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: first baseline;
+    /*border: 1px solid black;*/
+    border-radius: 20px;
+    height: 400px;
+	flex-wrap: wrap;
+	/*overflow: auto;*/
+}
+
+.painel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.secão{
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 15px;
+    min-height: fit-content;
+    max-height: 400px;
+    min-width: max-content;
+    max-width: 80%;
+    overflow-y: auto;
+}
+
+.links{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 4px;
+    text-decoration: none;
+}
+
+.informações{
+    text-align: center;
+}
+
+.cardapio{
+    text-align: center;
+    width: 60%;
+    height: 100%;
+	overflow-y: auto;
+}
+
+.catalogo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ingrediente{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.ingrediente label img{
+    width: 60px;
+}
+
+input[type="checkbox"]{
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+
+.ingrediente img{
+    background-color: lightblue;
+    padding: 5px;
+    border-radius: 10px;
+    image-rendering: pixelated;
+}
+
+.ingrediente input:hover ~ img{
+    background-color: teal;
+}
+
+.ingrediente input:checked ~ img{
+    background-color: chartreuse;
+}
+
+.botão{
+    width: 100px;
+    height: 25px;
+    border: 2px solid darkgray;
+    border-radius: 5px;
+    align-self: center;
+    justify-self: end;
+}
+
+.resultado{
+    text-align: center;
+    width: 300px;
+	overflow-y: auto;
+}
+
+table{
+    width: 100%;
+}
+
+th,td,caption{
+    text-align: center;
+    padding: 4px;
+}
+
+/*caption{
+    border-radius: 15px 15px 0px 0px;
+    border: 1px solid black;
+    border-bottom: none;
+}*/
+
+.rodapé{
+    background-color: cadetblue;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.assinatura{
+    padding: 10px;
+}

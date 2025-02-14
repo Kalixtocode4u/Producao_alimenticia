@@ -7,41 +7,33 @@ require_once("conexao.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastrar alimentos</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="design.css">
 </head>
 <body >
-    <header>
+    <header class="cabeçalho">
         <h2 class="titulo">cadastrar Alimento</h2>
+        <a href="admin.html">
+            <span class="circulo"></span>
+        </a>
     </header>
 
-    <main class="corpo_form">
-        <div class="painel_links">
-            <div class="maxWidth sombra"></div>
-            <a class="headerLabel sombra" href="index.php">Painel de Alimentos</a>
-            <div class="maxWidth sombra"></div>
-            <a class="headerLabel sombraTitulo">cadastrar Alimento</a>
-            <div class="maxWidth sombra"></div>
-            <a class="headerLabel sombra" href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
-            <div class="maxWidth sombra"></div>
-            <a class="headerLabel sombra" href="cadastrarReceita.php">cadastrar Receita</a>
-            <div class="maxWidth sombra"></div>
-            <a class="headerLabel sombra" href="listarAlimentos.php">listar Alimentos</a>
-            <div class="maxWidth sombra"></div>
-            <a class="headerLabel sombra" href="listarIngrediete.php" >listar Ingrediente</a>
-            <div class="maxWidth sombra"></div>
-        </div>
-        <div class="formulario">
+    <main class="painel">
+        <section class="secão">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post" enctype="multipart/form-data">
                 <label for="">nome</label><br>
-                ►<input type="text" name="nome"><br>
+                <input type="text" name="nome"><br>
                 <br>
                 <label>Selecione uma imagem</label><br>
                 <input type="file" name="imagem" accept="image/*"><br>
                 <br>
                 <button class="simpleLabel" type="submit" name="submit">cadastrar</button>
             </form>
-        </div>
+        </section>
     </main>
+
+    <footer class="rodapé">
+        <p class="assinatura">Por Kalixtocode4u</p>
+    </footer>
 </body>
 </html>
 <?php

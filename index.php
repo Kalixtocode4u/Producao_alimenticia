@@ -11,120 +11,136 @@ require("conexao.php")
     <link rel="shortcut icon" href="#">
 </head>
 <body>
-    <header>
-        <h1 id="titulo">PRODUÇÃO DE ALIMENTOS<i>1.4</i></h1>
+    <header class="cabeçalho">
+        <h1 class="titulo">PRODUÇÃO DE ALIMENTOS<i>1.4</i></h1>
+        <a href="login.html">
+            <span class="circulo"></span>
+        </a>
     </header>
     
-    <main>
-    
-        <div class="conteiner">
-            <h2>Opções de ingredientes</h2>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
-                <div class="painel">
-                    <?php
-                    $consulta = "SELECT id,src_ingrediente FROM ingredientes;";
-                    $fazConsulta = mysqli_query($conexao, $consulta);
-        
-                    if(mysqli_num_rows($fazConsulta) != 0){
-                        foreach ($fazConsulta as $ingredintes) {
-                    ?>
-                    <label class="cheq">
-                        <input type="checkbox" name="escolha[]" value="<?= $ingredintes['id']; ?>">
-                        <div class="bloco">
-                            <img src="<?= $ingredintes['src_ingrediente']; ?>">
-                        </div>
-                    </label>
-                    <?php 
-                        }
-                    } 
-                    ?>
-                </div>
-                <button class="btt" type="submit" name="submit">Alimentos</button>
-            </form>
-        </div>
-    
-        <div class="output">
-            <h2>resultado de Alimentos</h2>
-            <?php
-            if(isset($_POST["submit"])){
-                
-                $escolhas = $_POST['escolha'];
-                    
-                foreach ($escolhas as $escolha) {
-                            
-                    $consulta = "SELECT id_alimento, src_prato, nome FROM receita
-                                INNER JOIN 
-                                pratos ON pratos.id = receita.id_alimento
-                                JOIN 
-                                ingredientes ON ingredientes.id = receita.id_ingrediente 
-                                where id_ingrediente=$escolha;";
-                        
-                    $exeConsulta = mysqli_query($conexao, $consulta);
-        
-                    if (mysqli_num_rows($exeConsulta) != 0) {
-                        foreach ($exeConsulta as $alimentosEscolhido) {
-            ?>
-            <table>
-                <caption><div><img src="<?= $alimentosEscolhido['src_prato']; ?>"><p><?= $alimentosEscolhido['nome'] ?></p></div></caption>"; 
-                <thead>
-                    <tr>
-                        <th>Ingrediente</th>
-                        <th>Caloria</th>
-                        <th>Proteina</th>
-                        <th>Gordura</th>
-                    </tr>
-                </thead>
-                <tbody>
-            <?php
-                    $consultaB = "SELECT item,caloria,proteina,gordura FROM receita
-                                INNER JOIN
-                                ingredientes ON ingredientes.id = receita.id_ingrediente
-                                where id_alimento = $alimentosEscolhido[id_alimento];";
-                                    
-                    $exeConsultaB = mysqli_query($conexao, $consultaB);
-        
-                    if (mysqli_num_rows($exeConsultaB) != 0) {
-                        foreach ($exeConsultaB as $ingredientesEscolhidos){
-                ?>
-                    <tr>
-                        <td><?= $ingredientesEscolhidos['item'] ?></td>
-                        <td><?= $ingredientesEscolhidos['caloria'] ?></td>
-                        <td><?= $ingredientesEscolhidos['proteina'] ?></td>
-                        <td><?= $ingredientesEscolhidos['gordura'] ?></td>
-                    </tr>
-                <?php
-                    }}
-                ?>
-                </tbody>
-            </table>
-            <?php
-            }}}}
-            ?>
-            
-        </div>
+    <main class="conteiner">
 
-        <div class="info">
-            <h2>Info</h2>
+        <div class="conteudo">
+            <!--
+            <aside class="informações">
+                <h2 class="titulo2">Informações</h2>
+                <table>
+                    <caption><img>Ingrediente Nome</caption>
+                    <thead>
+                        <tr>
+                            <th>Nutriente</th>
+                            <th>Valor(100g)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Caloria</th>
+                            <td>82.2</td>
+                        </tr>
+                        <tr>
+                            <th>Proteina</th>
+                            <td>985.7</td>
+                        </tr>
+                        <tr>
+                            <th>Gordura</th>
+                            <td>989</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </aside>
+            -->
+
+            <section class="cardapio">
+                <h2>Opções de Ingredientes</h2>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+                    <div class="catalogo">
+                        <?php
+                        $consulta = "SELECT id,src_ingrediente FROM ingredientes;";
+                        $fazConsulta = mysqli_query($conexao, $consulta);
             
-            <a href="#">Painel de Alimentos</a>
+                        if(mysqli_num_rows($fazConsulta) != 0){
+                            foreach ($fazConsulta as $ingredintes) {
+                        ?>
+                        <div class="ingrediente">
+                            <label>
+                                <input type="checkbox" name="escolha[]" value="<?= $ingredintes['id']; ?>">
+                                <img src="<?= $ingredintes['src_ingrediente']; ?>">
+                            </label>
+                        </div>
+                        <?php 
+                            }
+                        } 
+                        ?>
+                    </div>
+                    <button class="botão" type="submit" name="submit">Gerar alimentos</button>
+                </form>
+            </section>
             
-            <a href="cadastrarAlimento.php">cadastrar Alimento</a>
+            <section class="resultado">
+                <h2>Pratos</h2>
+                <?php
+                if(isset($_POST["submit"])){
+                    
+                    $escolhas = $_POST['escolha'];
+                        
+                    foreach ($escolhas as $escolha) {
+                                
+                        $consulta = "SELECT id_alimento, src_prato, nome FROM receita
+                                    INNER JOIN 
+                                    pratos ON pratos.id = receita.id_alimento
+                                    JOIN 
+                                    ingredientes ON ingredientes.id = receita.id_ingrediente 
+                                    where id_ingrediente=$escolha;";
+                            
+                        $exeConsulta = mysqli_query($conexao, $consulta);
             
-            <a href="cadastrarIngrediente.php">cadastrar Ingrediente</a>
+                        if (mysqli_num_rows($exeConsulta) != 0) {
+                            foreach ($exeConsulta as $alimentosEscolhido) {
+                ?>
+                <table>
+                    <caption><div><img src="<?= $alimentosEscolhido['src_prato']; ?>"><p><?= $alimentosEscolhido['nome'] ?></p></div></caption> 
+                    <thead>
+                        <tr>
+                            <th>Ingrediente</th>
+                            <th>Caloria</th>
+                            <th>Proteina</th>
+                            <th>Gordura</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                <?php
+                        $consultaB = "SELECT item,caloria,proteina,gordura FROM receita
+                                    INNER JOIN
+                                    ingredientes ON ingredientes.id = receita.id_ingrediente
+                                    where id_alimento = $alimentosEscolhido[id_alimento];";
+                                        
+                        $exeConsultaB = mysqli_query($conexao, $consultaB);
             
-            <a href="cadastrarReceita.php">cadastrar Receita</a>
-            
-            <a href="listarAlimentos.php">listar Alimentos</a>
-            
-            <a href="listarIngrediete.php" >listar Ingrediente</a>
+                        if (mysqli_num_rows($exeConsultaB) != 0) {
+                            foreach ($exeConsultaB as $ingredientesEscolhidos){
+                    ?>
+                        <tr>
+                            <td><?= $ingredientesEscolhidos['item'] ?></td>
+                            <td><?= $ingredientesEscolhidos['caloria'] ?></td>
+                            <td><?= $ingredientesEscolhidos['proteina'] ?></td>
+                            <td><?= $ingredientesEscolhidos['gordura'] ?></td>
+                        </tr>
+                    <?php
+                        }}
+                    ?>
+                    </tbody>
+                </table>
+                <?php
+                }}}}
+                ?>
+                
+            </section>
         </div>
     
     </main>
     
-    <footer class="flex-around">
-        <p>criado por Carlos Pedro</p>
-        <p>UNLICENSED</p>
-        <p>PHP,Laragon,SQL</p>
+    <footer class="rodapé">
+        <p class="assinatura">Por Kalixtocode4u</p>
     </footer>
 </body>
 
