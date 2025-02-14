@@ -1,6 +1,7 @@
 # Produção alimenticia
 
-é isso pessoal 🐰🥕
+é um projeto simples com PHP, MySQL, HTML, CSS, um pouco de javascript
 
-Boa Tarde, meu nome é Carlos Pedro, estou no 5º período em ciencia da computação na São Lucas, estou fazendo estagio supervisionado.
-Aqui meu curriculo
+## como usar
+
+copie esse projeto na pasta www no laragon então execute
